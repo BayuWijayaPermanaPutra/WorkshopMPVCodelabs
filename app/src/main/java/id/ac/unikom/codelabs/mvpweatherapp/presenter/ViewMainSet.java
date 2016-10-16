@@ -1,4 +1,4 @@
-package id.ac.unikom.codelabs.mvpweatherapp.view;
+package id.ac.unikom.codelabs.mvpweatherapp.presenter;
 
 import java.util.List;
 
@@ -10,7 +10,8 @@ import id.ac.unikom.codelabs.mvpweatherapp.model.Weather;
 
 public interface ViewMainSet {
     void showErrorMessage();
-    void loadWeathers(List<Weather> weathers);
     void showProgress();
     void hideProgress();
+    void showWeatherClickedMessage(Weather cuaca);
+    void loadWeathers(List<Weather> weathers);
 }

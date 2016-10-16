@@ -24,12 +24,15 @@ import id.ac.unikom.codelabs.mvpweatherapp.model.Weather;
 
 public class WeatherApiImpl implements WeatherApi {
     private final static String URL_API = "http://api.openweathermap.org/data/2.5/group?id=1650357,1215502,1625084,1646170,1633070,1643776,1651531,1214520,1624647,1648473,1630789,1629001,1642911,1621177,1627896,1625822,8064082,1645528,1643837,2082600&units=metric&APPID=b35ad63f5f5ced9b4bceaf049edf6dfb";
+    private List<Weather> weathers;
+
     @Override
     public void getWeathers(WeatherApiCallback<List<Weather>> callback) {
         new getWeathersFromApi(callback).execute();
     }
+
     private class getWeathersFromApi extends AsyncTask<Void, Void, List<Weather>> {
-        private List<Weather> weathers;
+
         private WeatherApiCallback callback;
 
         public getWeathersFromApi(WeatherApiCallback callback) {

@@ -10,4 +10,6 @@ import id.ac.unikom.codelabs.mvpweatherapp.model.Weather;
 
 public interface WeatherPresenter {
     void loadWeather();
+    void itemClick(Weather cuaca);
+    List<Weather> filter(List<Weather> models, String query);
 }

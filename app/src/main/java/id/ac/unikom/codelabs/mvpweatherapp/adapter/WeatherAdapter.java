@@ -23,6 +23,7 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
     private final Context context;
     private final WeatherItemListener mListener;
     private List<Weather> weathers = new ArrayList<>();
+
     public WeatherAdapter(Context context, WeatherItemListener mListener) {
         this.context = context;
         this.mListener = mListener;
@@ -78,6 +79,12 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
 
     public interface WeatherItemListener {
         void onWeatherItemClick(Weather item);
+    }
+
+    public void setFilter(List<Weather> weathersList){
+        weathers = new ArrayList<>();
+        weathers.addAll(weathersList);
+        notifyDataSetChanged();
     }
 
 }
